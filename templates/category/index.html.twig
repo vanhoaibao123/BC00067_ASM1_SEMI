@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<h1>Category list</h1>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Price</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        
+                    <tr>
+                         <td><img src="{{asset('uploads/sanpham/' ~ data.getPhoto())}}" height="150" /></td>
+                        <td>{{data.getPrice()}}</td>
+                        
+                    </tr>
+                        
+                            <form>
+                             <a href="#" class="btn btn-warning">Edit</a>
+                            {# <a href="#" class="btn btn-danger">Delete</a> #}
+                            </form>
+                        </td>
+      
+    </tbody>
+</table>
+                {# <a href="{{ path('app_edit_Category', {'id': category.Price}) }}">Edit</a> #}
+
+<a href="{{ path('app_create_Category') }}"  class="btn btn-warning">Create a new category</a>
+<a href="{{ path('app_edit_Category') }}"  class="btn btn-warning">Edit</a>
+<a href="{{ path('app_delete_Category') }}"  class="btn btn-warning">Delete</a>
+{% endblock %}

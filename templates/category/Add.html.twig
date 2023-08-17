@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<h1>Add category</h1>
+<p>Are you sure you want to delete the category "{{ category.name }}"?</p>
+<form method="post">
+<input type="hidden" name="id" value="{{ category.id }}">
+<button type="submit">Yes, delete it</button>
+<a href="{{ path('category_index') }}">No, cancel</a>
+</form>
+{% endblock %}

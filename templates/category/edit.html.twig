@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<h1>Edit category</h1>
+<form method="post">
+    <input type="hidden" name="id" value="{{ category.id }}">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" value="{{ category.name }}">
+    <button type="submit">Save</button>
+</form>
+{% endblock %}

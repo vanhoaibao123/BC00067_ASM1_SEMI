@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Note form{% endblock %}
+
+{% block body %}
+<!DOCTYPE html>
+<html lang="en"> 
+     <div class="container-fluid pt-5">
+        <div class="container">
+            <div class="section-title">
+                <h4 class="display-4" style="letter-spacing: 5px;">PRODUCT DETAILS</h4>
+                <h1 class="text-primary text-uppercase">Existing products</h1>
+                 </div> 
+    <div class="container">
+        <a href="{{path('app_home')}}" class='btn btn-danger'>Back</a>
+        <table class="table">
+            <thead>
+                <tr>
+                    
+                    <td>Image</td>
+                    <td>Name Product</td>
+                    <td>Price</td>
+                    <td>Description</td>
+                    <td>Action</td>
+                </tr>
+            </thead>
+            <tbody>
+               
+                    <tr>
+                        
+                        
+                        <td><img src="{{asset('uploads/sanpham/' ~ data.getPhoto())}}" height="150" /></td>
+                        <td>{{data.getName()}}</td>
+                        <td>{{data.getPrice()}}</td>
+                        <td>{{data.getDescription()}}</td>
+                        <td>
+                            
+                        
+                            <form>
+                            <button type="submit" formmethod="post" formaction="{{path('app_cart_add_user',{'product_id':data.getId()})}}">Add to cart</button>
+                            
+                            </form>
+                        </td>
+                    </tr>
+                
+            </tbody>
+        </table>
+    </div> 
+</body>
+{% endblock %}
+
+
+
+
+    
+           
+               
+                 
+
+                  
+                  
+        
+
+    
+    
+
+
+    
